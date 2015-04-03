@@ -10,6 +10,7 @@
 		F01A0ECF1ACE814C000FC687 /* game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F01A0ECD1ACE814C000FC687 /* game.cpp */; };
 		F047B8311AC4C840005F4AC2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F047B8301AC4C840005F4AC2 /* main.cpp */; };
 		F047B8381AC4C862005F4AC2 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F047B8371AC4C862005F4AC2 /* SDL2.framework */; };
+		F04A354E1ACF450D00B6672C /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F04A354D1ACF450D00B6672C /* SDL2_image.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,6 +31,7 @@
 		F047B82D1AC4C840005F4AC2 /* SDLTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SDLTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F047B8301AC4C840005F4AC2 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		F047B8371AC4C862005F4AC2 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
+		F04A354D1ACF450D00B6672C /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +40,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F047B8381AC4C862005F4AC2 /* SDL2.framework in Frameworks */,
+				F04A354E1ACF450D00B6672C /* SDL2_image.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +50,7 @@
 		F047B8241AC4C840005F4AC2 = {
 			isa = PBXGroup;
 			children = (
+				F04A354D1ACF450D00B6672C /* SDL2_image.framework */,
 				F047B8371AC4C862005F4AC2 /* SDL2.framework */,
 				F047B82F1AC4C840005F4AC2 /* SDLTest */,
 				F047B82E1AC4C840005F4AC2 /* Products */,

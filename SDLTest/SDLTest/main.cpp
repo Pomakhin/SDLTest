@@ -14,7 +14,7 @@ Game *g_game = nullptr;
 int main(int argc, char* args[])
 {
     g_game = new Game();
-    g_game->init("Chapter 1", 100, 100, 640, 480, SDL_WINDOW_FULLSCREEN);
+    g_game->init("Chapter 1", 100, 100, 755, 600, 0);
     while(g_game->isRunning())
     {
         g_game->handleEvents();

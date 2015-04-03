@@ -17,14 +17,18 @@ class Game
 private:
     bool m_running = false;
     
-    SDL_Window* m_pWindow = 0;
-    SDL_Renderer* m_pRenderer = 0;
+    SDL_Window* m_pWindow = nullptr;
+    SDL_Renderer* m_pRenderer = nullptr;
+    
+    SDL_Texture* m_pTexture = nullptr; // the new SDL_Texture variable
+    SDL_Rect m_sourceRectangle; // the first rectangle
+    SDL_Rect m_destinationRectangle; // another rectangle
 public:
     Game() {}
     ~Game() {}
     
     void init(const char* title, int xpos, int ypos, int
-              height, int width, int flags);
+              height, int width, bool fullScreen);
     
     void render();
     void update(){}

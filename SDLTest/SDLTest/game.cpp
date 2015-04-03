@@ -8,17 +8,18 @@
 
 #include "game.h"
 #include <iostream>
+#include <SDL2_image/SDL_image.h>
 
 
 void Game::init(const char* title, int xpos, int ypos, int
-          height, int width, int flags)
+          height, int width, bool fullScreen)
 {
     // initialize SDL
     if(SDL_Init(SDL_INIT_EVERYTHING) >= 0)
     {
         // if succeeded create our window
         m_pWindow = SDL_CreateWindow(title, xpos, ypos,
-                                     height, width, flags);
+                                     height, width, 0);
         // if the window creation succeeded create our renderer
         if(m_pWindow != 0)
         {
@@ -30,6 +31,23 @@ void Game::init(const char* title, int xpos, int ypos, int
                 SDL_SetRenderDrawColor(m_pRenderer,
                                        255,255,255,255);
             }
+            
+            
+            SDL_Surface *tempSurface = IMG_Load("assets/char9.jpg");
+            m_pTexture = SDL_CreateTextureFromSurface(m_pRenderer,
+                                                      tempSurface);
+            SDL_FreeSurface(tempSurface);
+            
+            SDL_QueryTexture(m_pTexture, NULL, NULL,
+                             &m_sourceRectangle.w, &m_sourceRectangle.h);
+            
+            m_sourceRectangle.x = 0;
+            m_sourceRectangle.y = 0;
+            m_destinationRectangle.x = 100;
+            m_destinationRectangle.y = 100;
+            m_destinationRectangle.w = m_sourceRectangle.w;
+            m_destinationRectangle.h = m_sourceRectangle.h;
+            
             m_running = true;
         }
     }
@@ -38,6 +56,7 @@ void Game::init(const char* title, int xpos, int ypos, int
 void Game::render()
 {
     SDL_RenderClear(m_pRenderer); // clear the renderer to the draw color
+    SDL_RenderCopy(m_pRenderer, m_pTexture, nullptr, nullptr);
     SDL_RenderPresent(m_pRenderer); // draw to the screen
 }
 
